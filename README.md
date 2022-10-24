@@ -1,7 +1,7 @@
 # `ghx`: GitHub Extras (WIP)
 
-Module `ghx` (and its constituent packages) exposes Go APIs for features of
-GitHub currently do not have a public API:
+Module `ghx` provides packages that expose Go APIs for features of
+GitHub that currently do not have a public API:
 * Explore
 * Topics
 * Trending
