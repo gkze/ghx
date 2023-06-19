@@ -1,0 +1,57 @@
+schema = 3
+
+[mod]
+[mod."github.com/davecgh/go-spew"]
+version = "v1.1.1"
+hash = "sha256-nhzSUrE1fCkN0+RL04N4h8jWmRFPPPWbCuDc7Ss0akI="
+[mod."github.com/fatih/color"]
+version = "v1.10.0"
+hash = "sha256-8iRHT86JzKRgxVG+Ip9b+0JyCgd5ZAL5UIAqkWI1Vmg="
+[mod."github.com/goccy/go-yaml"]
+version = "v1.9.5"
+hash = "sha256-oAXz4TqBz78pCOM6nKIzke/+vKMX+xlwX6MuVMb3eTw="
+[mod."github.com/inconshreveable/mousetrap"]
+version = "v1.1.0"
+hash = "sha256-XWlYH0c8IcxAwQTnIi6WYqq44nOKUylSWxWO/vi+8pE="
+[mod."github.com/kr/pretty"]
+version = "v0.1.0"
+hash = "sha256-Fx+TaNrxW0VfzonT2jnd5MU09RRz7GJZkqAtJR6/pKI="
+[mod."github.com/mattn/go-colorable"]
+version = "v0.1.8"
+hash = "sha256-TBXc2n5tRebabjt0HipS8wCdRml0kM0JjpppUbdx1XQ="
+[mod."github.com/mattn/go-isatty"]
+version = "v0.0.12"
+hash = "sha256-noBpx3K4sa7tJcPpSUh+h7wJ8CRfrObaraKC2dE6VWU="
+[mod."github.com/pmezard/go-difflib"]
+version = "v1.0.0"
+hash = "sha256-/FtmHnaGjdvEIKAJtrUfEhV7EVo5A/eYrtdnUkuxLDA="
+[mod."github.com/spf13/cobra"]
+version = "v1.7.0"
+hash = "sha256-bom9Zpnz8XPwx9IVF+GAodd3NVQ1dM1Uwxn8sy4Gmzs="
+[mod."github.com/spf13/pflag"]
+version = "v1.0.5"
+hash = "sha256-w9LLYzxxP74WHT4ouBspH/iQZXjuAh2WQCHsuvyEjAw="
+[mod."github.com/stretchr/testify"]
+version = "v1.7.0"
+hash = "sha256-t1I9uCrn9vSUu/z5IZuNyGShmbOcJ6UGc2f75ZBrHzE="
+[mod."golang.org/x/crypto"]
+version = "v0.0.0-20220722155217-630584e8d5aa"
+hash = "sha256-gLzdWnyJtT1z2lw/GGmJEFBZ7AS1qVAo8M9Fqi0xFuE="
+[mod."golang.org/x/exp"]
+version = "v0.0.0-20230522175609-2e198f4a06a1"
+hash = "sha256-Jh6UvqP0R9tK/JMPAncV8KWa6aNh9Tnn/vWKcIHaUOs="
+[mod."golang.org/x/sys"]
+version = "v0.1.0"
+hash = "sha256-nZbEJ/2PuWrDLD4ujeVvcFGoIsfVoIH/Lcp4FjD7hpU="
+[mod."golang.org/x/term"]
+version = "v0.0.0-20201126162022-7de9c90e9dd1"
+hash = "sha256-ykpqi1F7Yzo1BVwuG0nbQOZnK0qevcCD2xqbXbsoQq0="
+[mod."golang.org/x/xerrors"]
+version = "v0.0.0-20200804184101-5ec99f83aff1"
+hash = "sha256-62f++IO8Ia32CYy+xX8XDxCcT9r1sbPvVwoKV99gf7U="
+[mod."gopkg.in/check.v1"]
+version = "v1.0.0-20180628173108-788fd7840127"
+hash = "sha256-KsRJNTprd1UijnJusbHwQGM7Bdm45Jt/QL+cIUGNa2w="
+[mod."gopkg.in/yaml.v3"]
+version = "v3.0.1"
+hash = "sha256-FqL9TKYJ0XkNwJFnq9j0VvJ5ZUU1RvH/52h/f5bkYAU="

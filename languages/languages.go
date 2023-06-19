@@ -8,13 +8,24 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
+
+	"ghx/utils"
 
 	"github.com/goccy/go-yaml"
 )
 
 const (
-	LinguistVersion  string = "v7.23.0"
-	LanguagesYAMLURL string = "https://api.github.com/repos/github/linguist/contents/lib/linguist/languages.yml"
+	LinguistVersion  string = "v7.25.0"
+	LanguagesYAMLURL string = "https://api.github.com/repositories/1725199/contents/lib/linguist/languages.yml"
+	HexColor         string = "#%02x%02x%02x"
+)
+
+var (
+	errInvalidHexLength    = fmt.Errorf("invalid length, must be 7 or 4")
+	structFieldNameMatcher = func(fieldName string) func(s string) bool {
+		return func(s string) bool { return strings.EqualFold(fieldName, s) }
+	}
 )
 
 type LanguageType string
@@ -24,24 +35,32 @@ const (
 	Markup      LanguageType = "markup"
 	Programming LanguageType = "programming"
 	Prose       LanguageType = "prose"
+	None        LanguageType = "none"
 )
 
 type Language struct {
-	ID            uint64       `yaml:"language_id"`
-	Name          string       `yaml:"name"`
-	Type          LanguageType `yaml:"type"`
-	Color         color.RGBA64 `yaml:"color"`
-	Extensions    []string     `yaml:"extensions"`
-	TextmateScope string       `yaml:"tm_scope"`
-	AceMode       string       `yaml:"ace_mode"`
+	ID                 uint64       `yaml:"language_id"`
+	Name               string       `yaml:"name"`
+	Group              string       `yaml:"group,omitempty"`
+	FSName             string       `yaml:"fs_name,omitempty"`
+	Aliases            []string     `yaml:"aliases,omitempty"`
+	Filenames          []string     `yaml:"filenames,omitempty"`
+	Interpreters       []string     `yaml:"interpreters,omitempty"`
+	Type               LanguageType `yaml:"type"`
+	Color              color.RGBA64 `yaml:"color"`
+	Extensions         []string     `yaml:"extensions"`
+	TextmateScope      string       `yaml:"tm_scope,omitempty"`
+	AceMode            string       `yaml:"ace_mode,omitempty"`
+	CodeMirrorMode     string       `yaml:"codemirror_mode,omitempty"`
+	CodeMirrorMIMEType string       `yaml:"codemirror_mime_type,omitempty"`
 }
 
-func ParseHexColor(s string) (c color.RGBA64, err error) {
+func HexStringToRGBA64(s string) (c color.RGBA64, err error) {
 	c.A = 0xff
 
 	switch len(s) {
 	case 7:
-		_, err = fmt.Sscanf(s, "#%02x%02x%02x", &c.R, &c.G, &c.B)
+		_, err = fmt.Sscanf(s, HexColor, &c.R, &c.G, &c.B)
 	case 4:
 		_, err = fmt.Sscanf(s, "#%1x%1x%1x", &c.R, &c.G, &c.B)
 		// Double the hex digits:
@@ -49,11 +68,15 @@ func ParseHexColor(s string) (c color.RGBA64, err error) {
 		c.G *= 17
 		c.B *= 17
 	default:
-		err = fmt.Errorf("invalid length, must be 7 or 4")
+		err = errInvalidHexLength
 
 	}
 
 	return
+}
+
+func RGBA64ToHexString(c color.RGBA64) string {
+	return fmt.Sprintf(HexColor, c.R, c.G, c.B)
 }
 
 func (l *Language) UnmarshalYAML(unmarshalFn func(interface{}) error) error {
@@ -66,7 +89,7 @@ func (l *Language) UnmarshalYAML(unmarshalFn func(interface{}) error) error {
 	l.Type = LanguageType(raw["type"].(string))
 
 	if colorRaw, ok := raw["color"]; ok {
-		colorParsed, err := ParseHexColor(colorRaw.(string))
+		colorParsed, err := HexStringToRGBA64(colorRaw.(string))
 		if err != nil {
 			return err
 		}
@@ -86,7 +109,14 @@ func (l *Language) UnmarshalYAML(unmarshalFn func(interface{}) error) error {
 	return nil
 }
 
-func GetLanguages() ([]Language, error) {
+type GetLanguagesOpts struct{ SortField string }
+
+func GetLanguages(opts GetLanguagesOpts) ([]Language, error) {
+	sortField := ""
+	if opts.SortField != "" {
+		sortField = opts.SortField
+	}
+
 	languagesYAMLURL, err := url.Parse(LanguagesYAMLURL)
 	if err != nil {
 		return nil, err
@@ -131,6 +161,10 @@ func GetLanguages() ([]Language, error) {
 		language.Name = languageName
 		languages = append(languages, language)
 	}
+
+	utils.SortSlice(&utils.SortSliceOpts[Language]{
+		Slice: languages, SortField: sortField,
+	})
 
 	return languages, nil
 }
