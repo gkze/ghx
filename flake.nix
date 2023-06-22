@@ -27,6 +27,8 @@
   outputs = { self, nixpkgs, flake-utils, gomod2nix, treefmt-nix, devshell }:
     flake-utils.lib.eachDefaultSystem (system:
       let
+        projName = "ghx";
+
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ devshell.overlays.default gomod2nix.overlays.default ];
@@ -60,11 +62,15 @@
         };
 
         # Configure Nix deveopment shell
-        devShells.default = pkgs.devshell.mkShell { };
+        devShells.default = pkgs.devshell.mkShell {
+          motd = "";
+          name = "${projName}-dev";
+          packages = [ "go" gomod2nix ];
+        };
 
         # Build executable binaries in this project (all `main` packages)
         packages.default = pkgs.buildGoApplication {
-          pname = "ghx";
+          pname = projName;
           version = pkgs.lib.removeSuffix "\n" (builtins.readFile ./VERSION);
           src = ./.;
           modules = ./gomod2nix.toml;

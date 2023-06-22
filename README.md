@@ -32,6 +32,7 @@ $ nix build
 
 Will produce executable binaries for all discovered `main` packages in
 `result/bin/`. Currently those are the 3 `gh` CLI extension compatible:
-* `gh-explore` (not implemented yet): CLI wrapper for [`ghx/explore`](explore)
-* `gh-languages`: CLI wrapper for [`ghx/languages`](languages)
-* `gh-stars` (not implemented yet): CLI wrapper for [`ghx/stars`](stars)
+
+- `gh-explore` (not implemented yet): CLI wrapper for [`ghx/explore`](explore)
+- `gh-languages`: CLI wrapper for [`ghx/languages`](languages)
+- `gh-stars` (not implemented yet): CLI wrapper for [`ghx/stars`](stars)
