@@ -21,7 +21,10 @@
     };
 
     # Nix development shell helper
-    devshell.url = "github:numtide/devshell";
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, gomod2nix, treefmt-nix, devshell }:
