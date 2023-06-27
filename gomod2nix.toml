@@ -1,57 +1,57 @@
 schema = 3
 
 [mod]
-[mod."github.com/davecgh/go-spew"]
-version = "v1.1.1"
-hash = "sha256-nhzSUrE1fCkN0+RL04N4h8jWmRFPPPWbCuDc7Ss0akI="
-[mod."github.com/fatih/color"]
-version = "v1.15.0"
-hash = "sha256-7b+scFVQeEUoXfeCDd8X2gS8GMoWA+HxjK8wfbypa5s="
-[mod."github.com/goccy/go-yaml"]
-version = "v1.11.0"
-hash = "sha256-ZC3WYiBE8DjyK7DrGG/XoB6Jgh1KqrkQWwFASRzoEts="
-[mod."github.com/inconshreveable/mousetrap"]
-version = "v1.1.0"
-hash = "sha256-XWlYH0c8IcxAwQTnIi6WYqq44nOKUylSWxWO/vi+8pE="
-[mod."github.com/kr/pretty"]
-version = "v0.1.0"
-hash = "sha256-Fx+TaNrxW0VfzonT2jnd5MU09RRz7GJZkqAtJR6/pKI="
-[mod."github.com/mattn/go-colorable"]
-version = "v0.1.13"
-hash = "sha256-qb3Qbo0CELGRIzvw7NVM1g/aayaz4Tguppk9MD2/OI8="
-[mod."github.com/mattn/go-isatty"]
-version = "v0.0.19"
-hash = "sha256-wYQqGxeqV3Elkmn26Md8mKZ/viw598R4Ych3vtt72YE="
-[mod."github.com/pmezard/go-difflib"]
-version = "v1.0.0"
-hash = "sha256-/FtmHnaGjdvEIKAJtrUfEhV7EVo5A/eYrtdnUkuxLDA="
-[mod."github.com/spf13/cobra"]
-version = "v1.7.0"
-hash = "sha256-bom9Zpnz8XPwx9IVF+GAodd3NVQ1dM1Uwxn8sy4Gmzs="
-[mod."github.com/spf13/pflag"]
-version = "v1.0.5"
-hash = "sha256-w9LLYzxxP74WHT4ouBspH/iQZXjuAh2WQCHsuvyEjAw="
-[mod."github.com/stretchr/testify"]
-version = "v1.7.0"
-hash = "sha256-t1I9uCrn9vSUu/z5IZuNyGShmbOcJ6UGc2f75ZBrHzE="
-[mod."golang.org/x/crypto"]
-version = "v0.10.0"
-hash = "sha256-K+hdDHZM4oguyeYQAlp8Pu+BdVmo1pSIQ6jdVHdVPW0="
-[mod."golang.org/x/exp"]
-version = "v0.0.0-20230522175609-2e198f4a06a1"
-hash = "sha256-Jh6UvqP0R9tK/JMPAncV8KWa6aNh9Tnn/vWKcIHaUOs="
-[mod."golang.org/x/sys"]
-version = "v0.9.0"
-hash = "sha256-++MDSczD7y9yLA3isjfNpXGl66snfb45wsNixGjebU4="
-[mod."golang.org/x/term"]
-version = "v0.9.0"
-hash = "sha256-FcxW0J/gEeIAbfrPZxm+VEPJFJJFMQtLhDVBTzGa+8E="
-[mod."golang.org/x/xerrors"]
-version = "v0.0.0-20220907171357-04be3eba64a2"
-hash = "sha256-6+zueutgefIYmgXinOflz8qGDDDj0Zhv+2OkGhBTKno="
-[mod."gopkg.in/check.v1"]
-version = "v1.0.0-20180628173108-788fd7840127"
-hash = "sha256-KsRJNTprd1UijnJusbHwQGM7Bdm45Jt/QL+cIUGNa2w="
-[mod."gopkg.in/yaml.v3"]
-version = "v3.0.1"
-hash = "sha256-FqL9TKYJ0XkNwJFnq9j0VvJ5ZUU1RvH/52h/f5bkYAU="
+  [mod."github.com/davecgh/go-spew"]
+    version = "v1.1.1"
+    hash = "sha256-nhzSUrE1fCkN0+RL04N4h8jWmRFPPPWbCuDc7Ss0akI="
+  [mod."github.com/fatih/color"]
+    version = "v1.15.0"
+    hash = "sha256-7b+scFVQeEUoXfeCDd8X2gS8GMoWA+HxjK8wfbypa5s="
+  [mod."github.com/goccy/go-yaml"]
+    version = "v1.11.0"
+    hash = "sha256-ZC3WYiBE8DjyK7DrGG/XoB6Jgh1KqrkQWwFASRzoEts="
+  [mod."github.com/inconshreveable/mousetrap"]
+    version = "v1.1.0"
+    hash = "sha256-XWlYH0c8IcxAwQTnIi6WYqq44nOKUylSWxWO/vi+8pE="
+  [mod."github.com/kr/pretty"]
+    version = "v0.1.0"
+    hash = "sha256-Fx+TaNrxW0VfzonT2jnd5MU09RRz7GJZkqAtJR6/pKI="
+  [mod."github.com/mattn/go-colorable"]
+    version = "v0.1.13"
+    hash = "sha256-qb3Qbo0CELGRIzvw7NVM1g/aayaz4Tguppk9MD2/OI8="
+  [mod."github.com/mattn/go-isatty"]
+    version = "v0.0.19"
+    hash = "sha256-wYQqGxeqV3Elkmn26Md8mKZ/viw598R4Ych3vtt72YE="
+  [mod."github.com/pmezard/go-difflib"]
+    version = "v1.0.0"
+    hash = "sha256-/FtmHnaGjdvEIKAJtrUfEhV7EVo5A/eYrtdnUkuxLDA="
+  [mod."github.com/spf13/cobra"]
+    version = "v1.7.0"
+    hash = "sha256-bom9Zpnz8XPwx9IVF+GAodd3NVQ1dM1Uwxn8sy4Gmzs="
+  [mod."github.com/spf13/pflag"]
+    version = "v1.0.5"
+    hash = "sha256-w9LLYzxxP74WHT4ouBspH/iQZXjuAh2WQCHsuvyEjAw="
+  [mod."github.com/stretchr/testify"]
+    version = "v1.7.0"
+    hash = "sha256-t1I9uCrn9vSUu/z5IZuNyGShmbOcJ6UGc2f75ZBrHzE="
+  [mod."golang.org/x/crypto"]
+    version = "v0.10.0"
+    hash = "sha256-K+hdDHZM4oguyeYQAlp8Pu+BdVmo1pSIQ6jdVHdVPW0="
+  [mod."golang.org/x/exp"]
+    version = "v0.0.0-20230626212559-97b1e661b5df"
+    hash = "sha256-aoesDZqls2sBtDmZ/ZSLzIudLuD8GDtGEEucyiqbCjY="
+  [mod."golang.org/x/sys"]
+    version = "v0.9.0"
+    hash = "sha256-++MDSczD7y9yLA3isjfNpXGl66snfb45wsNixGjebU4="
+  [mod."golang.org/x/term"]
+    version = "v0.9.0"
+    hash = "sha256-FcxW0J/gEeIAbfrPZxm+VEPJFJJFMQtLhDVBTzGa+8E="
+  [mod."golang.org/x/xerrors"]
+    version = "v0.0.0-20220907171357-04be3eba64a2"
+    hash = "sha256-6+zueutgefIYmgXinOflz8qGDDDj0Zhv+2OkGhBTKno="
+  [mod."gopkg.in/check.v1"]
+    version = "v1.0.0-20180628173108-788fd7840127"
+    hash = "sha256-KsRJNTprd1UijnJusbHwQGM7Bdm45Jt/QL+cIUGNa2w="
+  [mod."gopkg.in/yaml.v3"]
+    version = "v3.0.1"
+    hash = "sha256-FqL9TKYJ0XkNwJFnq9j0VvJ5ZUU1RvH/52h/f5bkYAU="
